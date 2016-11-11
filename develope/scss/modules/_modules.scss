@@ -1,0 +1,156 @@
+@mixin corner($radius) {
+    border-radius: $radius;
+}
+
+.input_border {
+    text-align: left;
+    @include corner(4px);
+    margin-bottom: 18px;
+    border: solid 1px rgba(195, 195, 195, 0.8);
+    box-shadow: inset 0px -20px 43px -40px rgba(0, 0, 0, 0.75);
+}
+
+.button {
+    margin-top: 10px;
+    margin-bottom: 9px;
+    color: #fff;
+    font-size: 22px;
+    border: solid 1px rgb(95, 95, 95);
+    box-shadow: inset 0px -20px 90px -50px rgba(0, 0, 0, 0.75);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.45);
+    background-color: #9cd339;
+    cursor: pointer;
+    outline: none;
+    @include corner(4px);
+    &:disabled {
+        background-color: #bcdb97;
+        opacity: 0.8;
+        border: 1px solid #90ca6d;
+        cursor: auto;
+    }
+}
+
+.form_container {
+    h1 {
+        font-size: 1.95em;
+        line-height: 0.8em;
+        font-weight: 500;
+        color: white;
+        text-shadow: 1px 2px 2px rgba(43, 1, 0, 0.75);
+    }
+}
+
+.form_shadow {
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: rgba(7, 7, 7, 0.3);
+    @include corner(4px);
+}
+
+form {
+    max-width: 338px;
+    padding: 22px;
+    padding-bottom: 17px;
+    background-color: #f8f8f8;
+    color: #B5B5B5;
+    @include corner(4px);
+    label {
+        font-weight: normal;
+    }
+}
+
+.input_box {
+    display: flex;
+    max-width: 338px;
+    height: 40px;
+    @extend .input_border;
+    img {
+        position: relative;
+        align-self: center;
+        top: 0;
+        left: 15px;
+    }
+    input,
+    select {
+        position: relative;
+        top: 7px;
+        left: 35px;
+        width: 100%;
+        height: 25px;
+        padding-left: 19px;
+        margin-right: 42px;
+        border: none;
+        border-left: solid 2px rgba(195, 195, 195, 0.2);
+        color: #969696;
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 15px;
+    }
+    select {
+        width: 80%;
+        @include corner(4px);
+        appearance: none;
+        background: url("../img/arrow-down.png") no-repeat right center;
+        cursor: pointer;
+    }
+}
+
+textarea {
+    position: relative;
+    width: 94%;
+    height: 223px;
+    padding-top: 9px;
+    padding-left: 17px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    @extend .input_border;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+.form_end {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    input[type=checkbox] {
+        position: relative;
+        display: none;
+        & + label {
+            position: relative;
+            cursor: pointer;
+        }
+        & + label:before {
+            display: inline-block;
+            vertical-align: middle;
+            width: 22px;
+            height: 22px;
+            margin-right: 15px;
+            content: '';
+            border: solid 1px rgb(195, 195, 195);
+            @include corner(4px);
+        }
+        &:checked + label:before {
+            background: url("../img/checkbox_checked.png") no-repeat center center;
+        }
+    }
+    .wide_button {
+        width: 100%;
+        min-width: 210px;
+        height: 50px;
+        @extend .button;
+    }
+    .narrow_button {
+        width: 148px;
+        height: 40px;
+        font-size: 18px;
+        @extend .button;
+    }
+    .decline {
+        background-color: #f4495b;
+    }
+}
