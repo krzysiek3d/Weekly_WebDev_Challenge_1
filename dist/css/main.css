@@ -98,6 +98,7 @@ footer .company_name {
 
 footer .web_page {
   margin-top: 7%;
+  padding-bottom: 150px;
 }
 
 .input_border, .input_box, textarea {
@@ -129,9 +130,9 @@ footer .web_page {
   cursor: auto;
 }
 
-.form_container h1 {
+.form_container span {
   font-size: 1.95em;
-  line-height: 0.8em;
+  line-height: 3em;
   font-weight: 500;
   color: white;
   text-shadow: 1px 2px 2px rgba(43, 1, 0, 0.75);
